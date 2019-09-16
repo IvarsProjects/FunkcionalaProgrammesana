@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+	static Scanner scanner;
+	
+	public static void main (String[] args)
+	{
+		int  Sum = 0;
+		int Answer = 0;
+			
+		
+		System.out.println("Enter number to check, or type 'exit' to quit!");
+		
+		scanner = new Scanner(System.in);
+		Answer = scanner.nextInt();
+		
+		for(int i = 0; i < Answer; i++)
+		{
+			if(Answer % i == 0)
+			{
+				Sum = Sum + i;
+				
+			}
+			
+		}
+		
+	
+			
+	}
+	
+	
+}

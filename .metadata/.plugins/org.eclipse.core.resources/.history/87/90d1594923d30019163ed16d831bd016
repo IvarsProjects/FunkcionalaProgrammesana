@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+	Scanner scanner;
+	
+	public static void main (String[] args)
+	{
+		int i = 0;
+		int Number = 0;
+		int Sum = 0;
+	}
+	
+	
+}
