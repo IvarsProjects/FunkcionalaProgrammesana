@@ -1,37 +1,32 @@
 import java.util.Scanner;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 public class Main {
 	static Scanner scanner;
 	
-	
+	public static boolean Palindrome(String Input) {    
+	    int length = Input.length();
+	    for( int i = 0; i < length/2; i++ )
+	        if (Input.charAt(i) != Input.charAt(length-i-1)) return false;
+	    return true;    
+	}
+		
 	public static void main (String[] args)
 	{
-		int  Sum = 0;
-		int Input = 0;
+		String Input;
 		
-		System.out.println("Enter any positive number");
+		System.out.println("Enter any string");
 		
 		scanner = new Scanner(System.in);
-		Input = scanner.nextInt();
+		Input = scanner.nextLine();
 		
-		int Number = Input;
-		
-		Sum = IntStream.range(1, Input).filter(i -> Number % i == 0).sum(); 
-		
-		
-		if(Sum == Input)
-		{
-			System.out.println("Entered number is perfect number!");
+		if(Palindrome(Input))
+		{		
+			System.out.println("Entered string is palindrome!");
 		}
-		else if(Sum < Input)
+		else
 		{
-			System.out.println("Entered number is deficient!");
+			System.out.println("Entered string is not palindrome!");
 		}
-		else 
-		{
-			System.out.println("Entered number is abundant!");
-		}	
+		
 	}
 }
