@@ -2,13 +2,23 @@ import java.util.Scanner;
 
 public class Main {
 	static Scanner scanner;
-	
-	public static boolean Palindrome(String Input) {    
-	    int length = Input.length();
-	    for( int i = 0; i < length/2; i++ )
-	        if (Input.charAt(i) != Input.charAt(length-i-1)) return false;
-	    return true;    
-	}
+		
+    public static boolean isPalindrome(String input)
+    {  
+        if(input.length() == 1)
+        {
+            return true; 
+        }
+        if(input.charAt(0) == input.charAt(input.length()-1))  
+        {
+        return isPalindrome(input.substring(1, input.length()-1));  
+        }
+        else
+        {
+        	return false;
+        }
+        
+    }
 		
 	public static void main (String[] args)
 	{
@@ -19,7 +29,7 @@ public class Main {
 		scanner = new Scanner(System.in);
 		Input = scanner.nextLine();
 		
-		if(Palindrome(Input))
+		if(isPalindrome(Input))
 		{		
 			System.out.println("Entered string is palindrome!");
 		}
